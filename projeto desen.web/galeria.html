@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria</title>
+  <link rel="stylesheet" href="galeria.css">
+  <style>
+  </style>
+</head>
+<body>
+
+  <header>  
+    <h1>Um pouco mais sobre nós</h1>
+    <p></p>
+  </header>
+
+  <button  class="button1" onclick= "voltarParaPagina1()"><b>Voltar ao Início</b></button>
+  <button  class="button" onclick= "irParaPagina3()"><b>Avançar</b></button>
+
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="card">
+          <img src="Luan.jpg" alt="Luan Henrique">
+          <h3>Luan Henrique</h3>
+          <button onclick="toggleGallery('gallery1')">Mais Informações</button>
+        </div>
+        <div class="card">
+          <img src="erick.jpg" alt="Erick">
+          <h3>Erick Oliveira</h3>
+          <button onclick="toggleGallery('gallery2')">Mais Informações</button>
+        </div>
+        <div class="card">
+          <img src="Hugo.jpg" alt="Hugo Alves">
+          <h3>Hugo Alves</h3>
+          <button onclick="toggleGallery('gallery3')">Mais Informações</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="prev" onclick="moveSlide(-1)">Anterior</button>
+      <button id="next" onclick="moveSlide(1)">Próximo</button>
+    </div>
+
+  
+    <div class="gallery-container" id="gallery1">
+      <h4>Gostos Pessoais</h4>
+      <div class="gallery">
+        <div>
+          <img src="ps5.jpg" alt="Praia Tropical 1">
+          <p>Hobby</p>
+        </div>
+        <div>
+          <img src="escudo.jpg" alt="Praia Tropical 2">
+          <p>Time</p>
+        </div>
+        <div>
+          <img src="lucas.jpg" alt="Praia Tropical 3">
+          <p>Jogador Favorito</p>
+        </div>
+      </div>
+      <button class="back-button" onclick="goBackToCard()">Voltar para o Card</button>
+    </div>
+
+    <div class="gallery-container" id="gallery2">
+      <h4>Gostos Pessoais</h4>
+      <div class="gallery">
+        <div>
+          <img src="fut.jpg" alt="Floresta Retiro 1">
+          <p>Hobby</p>
+        </div>
+        <div>
+          <img src="escudo.jpg" alt="Floresta Retiro 2">
+          <p>Time</p>
+        </div>
+        <div>
+          <img src="magro.jpg" alt="Floresta Retiro 3">
+          <p>Jogador Favorito</p>
+        </div>
+      </div>
+      <button class="back-button" onclick="goBackToCard()">Voltar para o Card</button>
+    </div>
+
+    <div class="gallery-container" id="gallery3">
+      <h4>Gostos Pessoais</h4>
+      <div class="gallery">
+        <div>
+          <img src="futebol.jpg" alt="Getaway Urbano 1">
+          <p>Hobby</p>
+        </div>
+        <div>
+          <img src="escudo.jpg" alt="Getaway Urbano 2">
+          <p>Time</p>
+        </div>
+        <div>
+          <img src="diego.jpg" alt="Getaway Urbano 3">
+          <p>Jogador Favorito</p>
+        </div>
+      </div>
+      <button class="back-button" onclick="goBackToCard()">Voltar para o Card</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Nosso Grupo - Todos os direitos reservados</p>
+</footer>
+
+  <script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+      const track = document.querySelector('.carousel-track');
+      const cards = document.querySelectorAll('.card');
+      const totalCards = cards.length;
+
+      currentIndex = (currentIndex + direction + totalCards) % totalCards;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function toggleGallery(galleryId) {
+      const allGalleries = document.querySelectorAll('.gallery-container');
+      allGalleries.forEach(gallery => gallery.style.display = 'none');
+      const gallery = document.getElementById(galleryId);
+      gallery.style.display = 'block';
+    }
+
+    function goBackToCard() {
+      const allGalleries = document.querySelectorAll('.gallery-container');
+      allGalleries.forEach(gallery => gallery.style.display = 'none');
+    }
+
+    function voltarParaPagina1() {
+      window.location.href = "index.html"; 
+    }
+
+    function irParaPagina3() {
+         window.location.href = "cadastro.html"; // Redireciona para a segunda página
+   }
+  </script>
+</body>
+</html>

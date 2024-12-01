@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça já o seu cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Faça seu Cadastro</h1>
+    </header>
+
+    <button class="button" onclick="voltarParaPagina1()"><b>Voltar ao Início</b></button>
+    <button class="toggle-button" onclick="toggleNightMode()"><b>Modo Noturno</b></button>
+
+    <div class="form-container">
+        <h2>Cadastro</h2>
+        <form id="form" action="#" method="post" onsubmit="return validarSenha(event)">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" pattern="[0-9]{10,11}" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+            <label for="confirma-senha">Confirme sua Senha:</label>
+            <input type="password" id="confirma-senha" name="confirma-senha" placeholder="Confirme sua senha" required>
+
+            <label for="opiniao">Sua opinião sobre o site:</label>
+            <input type="text" id="opiniao" name="opiniao" placeholder="O que podemos melhorar no nosso site?" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <div id="mensagem-sucesso" style="display: none; color: green; font-size: 18px; margin-top: 20px;">
+        Cadastro realizado com sucesso!
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Nosso Grupo - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function voltarParaPagina1() {
+            window.location.href = "index.html"; // Redireciona de volta para a primeira página
+        }
+
+        function toggleNightMode() {
+            document.body.classList.toggle("night-mode");
+        }
+
+        // Função de validação da senha
+        function validarSenha(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirma-senha').value;
+            const mensagemErro = document.createElement('p');
+            const form = document.getElementById('form');
+
+            // Regex para validar a senha
+            const regexSenha = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+
+            // Verifica se a senha está de acordo com os critérios
+            if (!regexSenha.test(senha)) {
+                mensagemErro.textContent = "A senha deve ter no mínimo 8 caracteres, incluir uma letra maiúscula e um caractere especial.";
+                mensagemErro.style.color = 'red';
+                form.appendChild(mensagemErro); // Exibe a mensagem de erro
+                return false; // Impede o envio do formulário
+            }
+
+            // Verifica se as senhas coincidem
+            if (senha !== confirmaSenha) {
+                mensagemErro.textContent = "As senhas não coincidem.";
+                mensagemErro.style.color = 'red';
+                form.appendChild(mensagemErro); // Exibe a mensagem de erro
+                return false; // Impede o envio do formulário
+            }
+
+            // Se tudo estiver correto, exibe a mensagem de sucesso e limpa o formulário
+            document.getElementById('mensagem-sucesso').style.display = 'block';
+            form.reset(); // Reseta o formulário após o sucesso
+
+            // A mensagem de sucesso ficará visível por 3 segundos
+            setTimeout(() => {
+                document.getElementById('mensagem-sucesso').style.display = 'none';
+            }, 3000);
+
+            return false; // Impede o envio do formulário para simular sucesso
+        }
+    </script>
+
+</body>
+</html>

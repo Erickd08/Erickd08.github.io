@@ -1,0 +1,190 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do formulário */
+.form-container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(19, 107, 223, 0.288);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+}
+
+.form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos do botão fixo */
+.button { 
+    position: fixed;
+    top: 20px;  
+    left: 20px; 
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: black; 
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+}
+
+/* Botão fixo no modo noturno */
+body.night-mode .button {
+    background-color: #fff;
+    color: black;
+}
+
+/* Botão de Modo Noturno */
+.toggle-button {
+    position: fixed;
+    top: 20px;  
+    right: 20px;   
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: black; 
+    color: #faf6f6;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+}
+
+/* Estilos do corpo no modo noturno */
+body.night-mode {
+    background-color: #080808; 
+    color: white; 
+}
+
+/* Estilo do formulário no modo noturno */
+body.night-mode .form-container {
+    background: #111111a4;
+    color: #007BFF;
+}
+
+body.night-mode .form-container input,
+body.night-mode .form-container textarea {
+    background-color: #fcf6f6;
+    color: white;
+    border-color: #f3ebeb;
+}
+
+body.night-mode .form-container button {
+    background-color: #007BFF;
+    ;
+}
+
+body.night-mode .form-container button:hover {
+    background-color: #666;
+}
+
+body.night-mode .form-container label{
+    color: rgb(245, 238, 238);
+}
+
+body.night-mode .form-container h2{
+    color: #e7ebee;
+}
+
+body.night-mode .button{
+    background-color: #fff;
+    color: black;
+    
+}
+
+.night-mode .toggle-button{
+    background-color: #fff;
+    color: black;
+}
+
+body.night-mode .form-container input,
+body.night-mode .form-container textarea {
+    background-color: #333; /* Fundo mais claro para os campos de entrada */
+    color: white; /* Cor do texto branca para o modo noturno */
+    border-color: #555; /* Cor da borda mais clara */
+}
+
+ /* Define o estilo para o rodapé */
+ footer {
+    position: fixed;        /* Fixa o rodapé na tela */
+    bottom: 0;              /* Posiciona na parte inferior */
+    left: 0;                /* Posiciona no lado esquerdo 
+    color: white;           /* Cor do texto */
+    text-align: left;       /* Alinha o texto à esquerda */
+    padding: 10px;          /* Espaçamento interno */
+    font-size: 14px;        /* Tamanho da fonte */
+}
+
+header {
+    background-color: #f8f8f8;
+    color: black; /* Texto preto */
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.5em;
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0; /* Posiciona no topo da página */
+    left: 0; /* Inicia no lado esquerdo */
+    right: 0; /* Vai até o lado direito */
+    
+}
+
+.night-mode p {
+    color: #f0f0f0; 
+}
+
+.night-mode header {
+    background-color: #080808; 
+}
+
+.night-mode h1 {
+    color: #f0f0f0 ; 
+}
+
+
+

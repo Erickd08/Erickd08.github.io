@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+
+<header>
+    <h1>Conheça Nosso Grupo</h1>
+</header>
+
+<button class="toggle-button" onclick="toggleNightMode()"><b>Modo Noturno</b></button>
+<button class="button"  onclick="irParaPagina2()"><b>Avançar</b></button>
+
+
+<div class="container">
+   
+    <div class="profile">
+        <img src="Luan.jpg" alt="Foto de Perfil de Integrante 1">
+            <h2>Luan Henrique</h2>
+        
+        <div class="section">
+            <h3>Competências</h3>
+            <p>Proativo e Boa Comunicação</p>
+        </div>
+        
+        <div class="section">
+            <h3>Experiências Profissionais</h3>
+            <p>Jovem Aprendiz na TPF Engenharia.</p>
+        </div>
+        
+        <div class="section">
+            <h3>Escolaridade</h3>
+            <p>Cursando ADS na Faculdade Uninassau.</p>
+        </div>
+        
+    </div>
+
+    
+    <div class="profile">
+        <img src="erick.jpg" alt="Foto de Perfil de Integrante 2">
+        <h2>Erick Oliveira</h2>
+        
+        <div class="section">
+            <h3>Competências</h3>
+            <p>Boa Comunicação e Liderança</p>
+        </div>
+        
+        <div class="section">
+            <h3>Experiências Profissionais</h3>
+            <p>Designer Gráfico</p>
+        </div>
+        
+        <div class="section">
+            <h3>Escolaridade</h3>
+            <p>Cursando ADS na Faculdade Uninassau.</p>
+        </div>
+        
+    </div>
+
+
+    <div class="profile">
+        <img src="Hugo.jpg" alt="Foto de Perfil de Integrante 3">
+        <h2>Hugo</h2>
+        
+        <div class="section">
+            <h3>Competências</h3>
+            <p>Marketing Digital</p>
+        </div>
+        
+        <div class="section">
+            <h3>Experiências Profissionais</h3>
+            <p>Administrador</p>
+        </div>
+        
+        <div class="section">
+            <h3>Escolaridade</h3>
+            <p>Cursando ADS na Faculdade Uninassau e Bacharel em ADM</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Nosso Grupo - Todos os direitos reservados</p>
+</footer>
+
+<script>
+   function irParaPagina2() {
+         window.location.href = "galeria.html"; // Redireciona para a segunda página
+   }
+
+    function toggleNightMode() {
+        document.body.classList.toggle("night-mode");
+        
+    }
+    // Função para adicionar animação de fade-in e slide-up aos perfis
+window.onload = function() {
+    const profiles = document.querySelectorAll('.profile');
+    
+    profiles.forEach(profile => {
+        // Inicializa as animações
+        profile.classList.add('animate');
+    });
+};
+
+</script>
+
+</body>
+</html>
